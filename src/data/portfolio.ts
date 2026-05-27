@@ -8,7 +8,7 @@ export const profile = {
   phone: "+63 909 696 3041",
   github: "https://github.com/", // update if you have a public profile
   linkedin: "https://www.linkedin.com/", // update if you have a public profile
-  resumeUrl: "/Romeo_Magtibay_Jr_CV.pdf",
+  resumeUrl: `${import.meta.env.BASE_URL}Romeo_Magtibay_Jr_CV.pdf`,
   status: {
     fullTime: true,
     freelance: true,
