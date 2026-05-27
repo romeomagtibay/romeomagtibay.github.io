@@ -122,30 +122,32 @@ The downloadable CV lives at `public/Romeo_Magtibay_Jr_CV.pdf`. Replace the file
 
 ## Deployment
 
-This repo is wired up to deploy automatically to **GitHub Pages** via GitHub Actions on every push to `main`.
+This repo is deployed as a **GitHub user site** at the root URL — no sub-path quirks. GitHub Actions rebuilds and publishes on every push to `main`.
 
-Live URL (after first deploy completes):
+Live URL:
 
 ```
-https://<your-github-username>.github.io/rmagtibay/
+https://romeomagtibay.github.io/
 ```
+
+For this to work, the repo on GitHub must be named exactly **`romeomagtibay.github.io`** (matching the GitHub username).
 
 ### First-time setup
 
-1. Push the repo to GitHub (already done).
-2. On GitHub: **Settings → Pages → Build and deployment → Source → "GitHub Actions"**.
-3. Push to `main` (or trigger the workflow manually under the **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**).
-4. Watch the build under the **Actions** tab. When green, the deployment URL appears in the workflow summary.
+1. Make sure the repo is named `romeomagtibay.github.io` on GitHub.
+2. **Settings → Pages → Build and deployment → Source → "GitHub Actions"**.
+3. Push to `main` (or manually run the workflow under the **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**).
+4. Watch the build under the **Actions** tab. When green, the URL appears in the workflow summary.
 
 ### How it works
 
-- `.github/workflows/deploy.yml` checks out the repo, runs `npm ci && npm run build`, then uploads `dist/` to GitHub Pages.
-- `vite.config.ts` sets `base` to `/rmagtibay/` so all asset URLs resolve under the project sub-path. This is overridable via the `VITE_BASE_PATH` env variable.
-- The "Download CV" link uses `import.meta.env.BASE_URL` so it works in both dev and production.
+- `.github/workflows/deploy.yml` checks out the repo, runs `npm install && npm run build`, then uploads `dist/` to GitHub Pages.
+- `vite.config.ts` sets `base` to `/` (user site is served at root). Overridable via the `VITE_BASE_PATH` env variable if you ever need to deploy under a sub-path.
+- The "Download CV" link uses `import.meta.env.BASE_URL` so it works in both dev and production, regardless of base path.
 
 ### Switching to a custom domain later (e.g. `rmagtibay.dev`)
 
-The workflow is already wired for this — when the day comes, only three things change, **no code edits required**:
+Because the site is already served at root, **no code or workflow changes are needed**. Three small steps:
 
 1. **DNS** — at your registrar, point the domain at GitHub Pages:
    - Apex (`rmagtibay.dev`) — A records to:
@@ -155,11 +157,10 @@ The workflow is already wired for this — when the day comes, only three things
      185.199.110.153
      185.199.111.153
      ```
-   - `www` subdomain — CNAME to `<your-username>.github.io`.
+   - `www` subdomain — CNAME to `romeomagtibay.github.io`.
 
 2. **GitHub repo settings**:
    - **Settings → Pages → Custom domain** → enter `rmagtibay.dev`. GitHub provisions a free HTTPS cert.
-   - **Settings → Secrets and variables → Actions → Variables → New repository variable** → name `VITE_BASE_PATH`, value `/`.
 
 3. **Add `public/CNAME`** containing one line:
    ```
@@ -167,24 +168,8 @@ The workflow is already wired for this — when the day comes, only three things
    ```
    This file is copied into `dist/` on every build, which keeps GitHub from un-binding the domain after each deploy.
 
-Push (or re-run the workflow manually) and `https://rmagtibay.dev` is live.
-
-#### How the switch works
-
-`.github/workflows/deploy.yml` already reads the `VITE_BASE_PATH` repo variable with a sensible fallback:
-
-```yaml
-env:
-  VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/rmagtibay/' }}
-```
-
-| State | `VITE_BASE_PATH` | Site URL |
-| --- | --- | --- |
-| Today (sub-path) | variable unset → `/rmagtibay/` | `https://<user>.github.io/rmagtibay/` |
-| Custom domain | variable set to `/` | `https://rmagtibay.dev/` |
-
-Same code, same workflow — only the variable changes.
+Push (or re-run the workflow manually) and `https://rmagtibay.dev` is live alongside the github.io URL.
 
 ### Other hosts (for reference)
 
-`npm run build` produces a fully static `dist/` folder. Vercel, Netlify, and Cloudflare Pages all auto-detect Vite — connect the repo and they handle the rest with zero config and no `base` path quirks.
+`npm run build` produces a fully static `dist/` folder. Vercel, Netlify, and Cloudflare Pages all auto-detect Vite — connect the repo and they handle the rest with zero config.

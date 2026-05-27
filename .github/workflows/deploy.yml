@@ -36,14 +36,15 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Build
-        # Reads the VITE_BASE_PATH repo variable when set, falling back to
-        # /rmagtibay/ for the default GitHub Pages sub-path deployment.
-        # When you attach a custom domain (e.g. rmagtibay.dev), create a
-        # repo variable VITE_BASE_PATH=/ under
-        # Settings -> Secrets and variables -> Actions -> Variables.
+        # Deployed as a GitHub user site at https://romeomagtibay.github.io/,
+        # so the site is served from the root and the default base is '/'.
+        # Same root-served setup works for a future custom domain (e.g.
+        # rmagtibay.dev) without any code or workflow changes.
+        # VITE_BASE_PATH stays here as an escape hatch in case the site
+        # ever needs to be deployed under a sub-path again.
         run: npm run build
         env:
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/rmagtibay/' }}
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/' }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
