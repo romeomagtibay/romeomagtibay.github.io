@@ -30,7 +30,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # Using `npm install` instead of `npm ci` so the Linux runner can
+        # resolve platform-specific optional deps (e.g. @tailwindcss/oxide
+        # native binaries) that the Windows-generated lockfile doesn't list.
+        run: npm install --no-audit --no-fund
 
       - name: Build
         # Reads the VITE_BASE_PATH repo variable when set, falling back to
