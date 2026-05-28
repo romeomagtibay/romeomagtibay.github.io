@@ -29,7 +29,7 @@ export function Experience() {
             </span>
 
             <div className="rounded-2xl border border-slate-200/80 bg-white/60 p-5 shadow-sm backdrop-blur-sm transition hover:border-brand-400/50 hover:shadow-md dark:border-slate-800/80 dark:bg-slate-900/40 dark:hover:border-brand-400/40 sm:p-6">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-2">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   {exp.role}
                 </h3>

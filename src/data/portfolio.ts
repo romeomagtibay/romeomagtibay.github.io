@@ -1,13 +1,12 @@
 export const profile = {
   name: "Romeo Magtibay Jr.",
   role: "Sr. Full Stack Developer",
-  tagline:
-    "Building scalable, maintainable web applications with clean architecture and pragmatic engineering.",
+  tagline: "Passionate about clean code, performance, and shipping things that just work.",
   location: "Bulacan, Philippines",
   email: "romeo.magtibay26@gmail.com",
   phone: "+63 909 696 3041",
-  github: "https://github.com/", // update if you have a public profile
-  linkedin: "https://www.linkedin.com/", // update if you have a public profile
+  linkedin: "https://www.linkedin.com/in/romeo-magtibay",
+  facebook: "https://www.facebook.com/kyohei.magtibay",
   resumeUrl: `${import.meta.env.BASE_URL}Romeo_Magtibay_Jr_CV.pdf`,
   status: {
     fullTime: true,
@@ -15,9 +14,7 @@ export const profile = {
   },
 };
 
-export const about = `I'm a Senior Full Stack Developer with 8+ years of hands-on experience across enterprise platforms — from Singapore e-Government systems to real-time betting and live-streaming products. I work end-to-end across UI, frontend, and backend, comfortable in both Java/Spring and modern JavaScript stacks.
-
-I'm currently full-time at Anagenesis Inc., and I'm also open to freelance work in the evenings/weekends — small to mid-size projects, API design, frontend modernization, or full builds. If you're shipping something I can help with, let's talk.`;
+export const about = `I'm a Senior Full Stack Developer with hands-on experience across enterprise platforms — from Singapore e-Government systems to real-time betting and live-streaming products. I work end-to-end across UI, frontend, and backend, comfortable in both Java/Spring and modern JavaScript stacks.`;
 
 export type SkillGroup = {
   title: string;
@@ -103,6 +100,7 @@ export const experiences: Experience[] = [
     bullets: [
       "Translated UI/UX designs into production-ready web and mobile features.",
       "Built REST APIs and full-stack functionality for cross-platform betting applications.",
+      "Implemented Redis Pub/Sub as a message queue for real-time event distribution across services.",
       "Diagnosed and resolved defects across QA, UAT, pre-live, and production environments.",
       "Followed Agile practices — daily stand-ups, sprint planning, reviews, and retrospectives.",
     ],
@@ -126,6 +124,7 @@ export const experiences: Experience[] = [
       "Contributed to the ground-up development of a web-based e-Submission system.",
       "Developed full-stack features and translated FDS into production-ready code.",
       "Supported SIT database management, monitoring, and maintenance.",
+      "Participated in the full SDLC, from development to production deployment.",
     ],
   },
   {
@@ -150,14 +149,15 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Enterprise Betting System",
-    context: "Anagenesis Inc. / Cybilltek Software Inc.",
+    context: "Web App",
     summary:
-      "Cross-platform real-time betting and live-casino platform supporting football, basketball, tennis, and esports — built for high concurrent traffic and live data processing.",
+      "Contributed to a cross-platform real-time betting and live-casino platform supporting football, basketball, tennis, and esports — built for high concurrent traffic and live data processing.",
     tags: [
       "Java 8",
       "Angular 18",
       "Spring",
       "Google Guice",
+      "Redis",
       "Redis Pub/Sub",
       "MSSQL",
       "Jenkins",
@@ -165,9 +165,9 @@ export const projects: Project[] = [
   },
   {
     name: "Live Streaming & Sports Platform",
-    context: "Mobile Web App — Anagenesis / Cybilltek",
+    context: "Mobile Web App",
     summary:
-      "Mobile-first web platform delivering real-time live streaming of sports and esports events — football, basketball, tennis, and esports.",
+      "Contributed to a mobile-first web platform delivering real-time live streaming of sports and esports events — football, basketball, tennis, and esports.",
     tags: [
       "Java 17",
       "Angular 17",
@@ -176,13 +176,14 @@ export const projects: Project[] = [
       "Mockito",
       "PostgreSQL",
       "Redis",
+      "Jenkins",
     ],
   },
   {
     name: "GENIE",
     context: "Singapore E-Government — Legal Aid Bureau, Ministry of Law",
     summary:
-      "End-to-end paperless case management system for legal aid applications — digitizing registration, document storage, workflow processing, and case tracking.",
+      "Contributed to an end-to-end paperless case management system for legal aid applications — digitizing registration, document storage, workflow processing, and case tracking.",
     tags: [
       "Java",
       "Sencha Ext JS",
@@ -198,14 +199,14 @@ export const projects: Project[] = [
     name: "ERA — Enterprise Registry & Archival",
     context: "Singapore E-Government — Land Transport Authority",
     summary:
-      "National vehicle registration and archival system for the LTA — managing registration workflows, engineering drawings, and official transport documentation.",
+      "Contributed to a national vehicle registration and archival system for the LTA — managing registration workflows, engineering drawings, and official transport documentation.",
     tags: ["Java", "Sencha Ext JS", "Struts 2", "Hibernate 3", "Oracle", "Apache Solr"],
   },
   {
     name: "CORENET 2.0",
     context: "Singapore E-Government — Construction Submission",
     summary:
-      "National platform for electronic submission and processing of building and construction applications, used by Qualified Professionals across Singapore.",
+      "Contributed to a national platform for electronic submission and processing of building and construction applications, used by Qualified Professionals across Singapore.",
     tags: [
       "Java",
       "React.js",
@@ -221,7 +222,7 @@ export const projects: Project[] = [
     name: "URADAX 2.0",
     context: "Singapore E-Government — Urban Redevelopment Authority",
     summary:
-      "Workflow-driven system for processing land use and development applications — supporting occupancy and planning approvals within Singapore's regulatory framework.",
+      "Contributed to a workflow-driven system for processing land use and development applications — supporting occupancy and planning approvals within Singapore's regulatory framework.",
     tags: [
       "Java",
       "Syncfusion EJ2",
@@ -235,7 +236,7 @@ export const projects: Project[] = [
     name: "PAVO E-Collaboration",
     context: "Novasolutions — Internal DMS",
     summary:
-      "In-house document management system handling employee leave applications, project documentation (URS, FDS, PDG), and environment setup references.",
+      "Contributed to an in-house document management system handling employee leave applications, project documentation (URS, FDS, PDG), and environment setup references.",
     tags: ["Java", "Sencha Ext JS", "Struts 2", "Hibernate 3", "MSSQL", "Apache Solr"],
   },
 ];

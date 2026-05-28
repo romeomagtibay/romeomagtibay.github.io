@@ -73,7 +73,7 @@ export function Navbar({ theme, onToggleTheme }: Props) {
           href="#top"
           className="group flex items-center gap-2 font-mono text-sm font-medium tracking-tight text-slate-900 dark:text-slate-100"
         >
-          <span className="hidden sm:inline">romeo.dev</span>
+          <span>romeo.dev</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

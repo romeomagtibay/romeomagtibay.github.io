@@ -35,7 +35,6 @@ export function About() {
                   </span>
                 }
               />
-              <Row label="Experience" value="8+ years" />
               <Row
                 label="Education"
                 value={

@@ -1,8 +1,7 @@
 import { profile } from "../data/portfolio";
 import {
   ArrowDownIcon,
-  DownloadIcon,
-  GitHubIcon,
+  FacebookIcon,
   LinkedInIcon,
   MailIcon,
   MapPinIcon,
@@ -31,16 +30,18 @@ export function Hero() {
       <div className="container-page">
         <div className="flex flex-col items-start gap-6 sm:gap-7">
           {/* Console line */}
-          <div className="font-mono text-sm text-slate-500 dark:text-slate-500 animate-fade-up">
+          <div className="inline-flex items-center font-mono text-sm text-slate-500 dark:text-slate-500 animate-fade-up">
             <span className="text-emerald-500 dark:text-emerald-400">
               const
-            </span>{" "}
-            <span className="text-slate-700 dark:text-slate-300">developer</span>{" "}
-            <span>=</span>{" "}
-            <span className="text-amber-600 dark:text-amber-300">
+            </span>
+            <span className="ml-1 text-slate-700 dark:text-slate-300">
+              developer
+            </span>
+            <span className="ml-1">=</span>
+            <span className="ml-1 text-amber-600 dark:text-amber-300">
               "fullstack"
             </span>
-            <span className="animate-blink ml-0.5 inline-block h-4 w-[2px] -translate-y-[2px] bg-slate-700 dark:bg-slate-300" />
+            <span className="animate-blink ml-1 inline-block h-3.5 w-[2px] bg-slate-700 dark:bg-slate-300" />
           </div>
 
           {/* Status pills */}
@@ -72,11 +73,9 @@ export function Hero() {
             style={{ animationDelay: "200ms" }}
           >
             <span className="font-medium text-slate-800 dark:text-slate-200">
-              {profile.role}
+              {profile.role}.
             </span>{" "}
-            with 8+ years building enterprise platforms — from Singapore
-            e-Government systems to real-time betting and live-streaming products.
-            I care about clean code, readable APIs, and shipping things that work.
+            {profile.tagline}
           </p>
 
           {/* Meta */}
@@ -112,20 +111,21 @@ export function Hero() {
                 →
               </span>
             </a>
-            <a
+            {/* <a
               href={profile.resumeUrl}
               download
               className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/60 px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700/80 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:border-brand-400 dark:hover:text-brand-300"
             >
               <DownloadIcon style={{ width: 16, height: 16 }} />
               Download CV
-            </a>
+            </a> */}
+            {/* Disable Download CV button for now */}
 
             <div className="ml-1 flex items-center gap-1">
               <SocialIcon
-                href={profile.github}
-                label="GitHub"
-                Icon={GitHubIcon}
+                href={profile.facebook}
+                label="Facebook"
+                Icon={FacebookIcon}
               />
               <SocialIcon
                 href={profile.linkedin}
