@@ -6,6 +6,7 @@ import {
   MailIcon,
   MapPinIcon,
 } from "./Icons";
+import { TypewriterConsole } from "./TypewriterConsole";
 
 export function Hero() {
   return (
@@ -30,19 +31,7 @@ export function Hero() {
       <div className="container-page">
         <div className="flex flex-col items-start gap-6 sm:gap-7">
           {/* Console line */}
-          <div className="inline-flex items-center font-mono text-sm text-slate-500 dark:text-slate-500 animate-fade-up">
-            <span className="text-emerald-500 dark:text-emerald-400">
-              const
-            </span>
-            <span className="ml-1 text-slate-700 dark:text-slate-300">
-              developer
-            </span>
-            <span className="ml-1">=</span>
-            <span className="ml-1 text-amber-600 dark:text-amber-300">
-              "fullstack"
-            </span>
-            <span className="animate-blink ml-1 inline-block h-3.5 w-[2px] bg-slate-700 dark:bg-slate-300" />
-          </div>
+          <TypewriterConsole />
 
           {/* Status pills */}
           <div className="flex flex-wrap items-center gap-2 animate-fade-up" style={{ animationDelay: "100ms" }}>
@@ -87,14 +76,6 @@ export function Hero() {
               <MapPinIcon style={{ width: 16, height: 16 }} />
               {profile.location}
             </span>
-            <span className="hidden sm:inline">•</span>
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-1.5 transition hover:text-brand-600 dark:hover:text-brand-300"
-            >
-              <MailIcon style={{ width: 16, height: 16 }} />
-              {profile.email}
-            </a>
           </div>
 
           {/* CTAs */}

@@ -14,7 +14,7 @@ export function ThemeToggle({ theme, onToggle, className = "" }: Props) {
       type="button"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={onToggle}
-      className={`group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/80 bg-white/60 text-slate-700 shadow-sm transition hover:border-brand-400/60 hover:text-brand-600 dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-brand-400/60 dark:hover:text-brand-300 ${className}`}
+      className={`group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200/80 bg-white/60 text-slate-700 shadow-sm transition hover:border-brand-400/60 hover:text-brand-600 dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-brand-400/60 dark:hover:text-brand-300 cursor-pointer ${className}`}
     >
       <SunIcon
         className={`absolute h-4.5 w-4.5 transition-all duration-300 ${

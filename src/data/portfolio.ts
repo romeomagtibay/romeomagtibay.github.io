@@ -87,10 +87,11 @@ export const experiences: Experience[] = [
     period: "June 2025 — Present",
     current: true,
     bullets: [
-      "Continued development of an enterprise betting and live-streaming platform after a vendor transition.",
-      "Migrated the desktop and mobile web app from Angular 8 to Angular 18, modernizing the frontend.",
-      "Built REST APIs for new features, promotions, and real-time system functionality.",
-      "Collaborated with UI/UX and mobile teams to ship consistent cross-platform experiences.",
+      "Took ownership of an enterprise betting and live-streaming platform mid-flight following a vendor transition — reverse-engineered the codebase and re-established build and deploy ownership.",
+      "Led the Angular 8 → 18 migration of the desktop and mobile betting clients — replaced deprecated APIs, modernized RxJS patterns, and rolled out incrementally with zero customer-visible regressions.",
+      "Designed and shipped Spring/Java REST APIs for new promotions, betting features, and real-time system functionality consumed by both web and mobile clients.",
+      "Owned performance, scalability, and UX improvements across desktop and mobile web — including bundle optimization, lazy-loaded routes, and rendering audits to keep the app responsive under high real-time load.",
+      "Partnered with UI/UX and mobile teams to keep design tokens, component patterns, and platform behavior consistent across desktop, mobile web, and native clients."
     ],
   },
   {
@@ -98,11 +99,11 @@ export const experiences: Experience[] = [
     company: "Cybilltek Software Inc.",
     period: "March 2024 — June 2025",
     bullets: [
-      "Translated UI/UX designs into production-ready web and mobile features.",
-      "Built REST APIs and full-stack functionality for cross-platform betting applications.",
-      "Implemented Redis Pub/Sub as a message queue for real-time event distribution across services.",
-      "Diagnosed and resolved defects across QA, UAT, pre-live, and production environments.",
-      "Followed Agile practices — daily stand-ups, sprint planning, reviews, and retrospectives.",
+      "Implemented Redis Pub/Sub as the message queue backbone for a cross-platform betting application, enabling real-time event distribution across services and replacing slower polling-based communication.",
+      "Designed and shipped Spring Boot REST APIs for new features and promotions — from prototype through API documentation to production integration with web and mobile clients.",
+      "Built end-to-end full-stack functionality across web and mobile, translating Business Requirement Specifications (BRS/BRD) into production-ready features for a high-traffic betting application.",
+      "Drove UX and performance improvements across the cross-platform betting app, partnering with UI/UX to translate designs into consistent, accessible components.",
+      "Diagnosed and resolved defects across QA, UAT, pre-live, and production environments — owning root-cause analysis through fix verification.",
     ],
   },
   {
@@ -110,10 +111,13 @@ export const experiences: Experience[] = [
     company: "Novasolutions Philippine Inc.",
     period: "March 2022 — March 2024",
     bullets: [
-      "Delivered full-stack features (UI, frontend, backend) from URS and FDS specifications.",
-      "Optimized complex SQL queries to reduce response times for search and reporting.",
-      "Resolved defects across QA, SIT, UAT, and production environments.",
-      "Participated in the full SDLC, from development to production deployment.",
+      "Led a small team of developers — ran daily stand-ups, attended cross-team leads meetings to set priorities, and delegated tasks to keep delivery on track for a Singapore e-Government project.",
+      "Optimized complex production SQL queries that were causing slowness on the e-Government search feature, measurably improving response times for end users and easing database load.",
+      "Hardened application security by implementing XSS input sanitization and payload escaping across user-facing endpoints, blocking untrusted data from reaching the database layer.",
+      "Ran OWASP dependency vulnerability scans across the codebase, upgraded affected libraries to stable versions, and refactored outdated implementations to close known Common Vulnerabilities and Exposures (CVEs).",
+      "Migrated Apache Solr to its latest version on the legacy e-Government platform and refactored the affected indexes to align with the upgraded schema, ensuring search continuity for end users.",
+      "Continued the major tech revamp of a legacy e-Government project, progressively migrating the codebase from Enterprise JavaBeans (EJB) to the Spring Framework.",
+      "Delivered end-to-end full-stack features (UI, frontend, backend) from URS through FDS to production-ready code, including defect resolution across QA, SIT, UAT, and PROD."
     ],
   },
   {
@@ -121,10 +125,12 @@ export const experiences: Experience[] = [
     company: "Novasolutions Philippine Inc.",
     period: "March 2019 — March 2022",
     bullets: [
-      "Contributed to the ground-up development of a web-based e-Submission system.",
-      "Developed full-stack features and translated FDS into production-ready code.",
-      "Supported SIT database management, monitoring, and maintenance.",
-      "Participated in the full SDLC, from development to production deployment.",
+      "Served as module lead for the application and submission workflow processes of a Singapore e-Government e-Submission system — owning architecture decisions and delivery within the module.",
+      "Gatekept database changes — reviewed, executed, and corrected SQL scripts from all developers via SQL*Plus before commit, preventing broken migrations from reaching shared environments.",
+      "Implemented business process workflows using JBPM (jBoss Business Process Model) to orchestrate and monitor the e-Submission system's end-to-end submission flow.",
+      "Built scheduled batch jobs to advance workflow states and complete background processing for the e-Submission system.",
+      "Designed reporting infrastructure using Crystal Reports with optimized SQL queries for efficient data retrieval.",
+      "Managed, monitored, and maintained the SIT database — supporting QA and UAT cycles for the e-Submission system."
     ],
   },
   {
@@ -132,9 +138,11 @@ export const experiences: Experience[] = [
     company: "Novasolutions Philippine Inc.",
     period: "June 2017 — June 2019",
     bullets: [
-      "Built features for an in-house Document Management System.",
-      "Participated in the tech revamp — Struts → Spring MVC, Oracle → MSSQL.",
-      "Resolved defects across QA, SIT, UAT, and production environments.",
+      "Contributed to a major tech revamp of an in-house Document Management System — migrating the codebase from Struts to Spring MVC and the database from Oracle to MSSQL.",
+      "Built and enhanced features across the UI, frontend, and backend of the Document Management System based on User Requirements Specifications.",
+      "Upgraded the Apache Tomcat runtime of a legacy e-Government application to the latest stable version, resolving compatibility issues to bring the app up successfully on the new container.",
+      "Contributed to migrating a legacy C# application to Java — translating business logic, data access patterns, and module structure into the target stack.",
+      "Investigated and resolved defects identified during QA, SIT, UAT, and production — gaining exposure to the full delivery pipeline early.",
     ],
   },
 ];
@@ -149,7 +157,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Enterprise Betting System",
-    context: "Web App",
+    context: "Cross-Platform Web App",
     summary:
       "Contributed to a cross-platform real-time betting and live-casino platform supporting football, basketball, tennis, and esports — built for high concurrent traffic and live data processing.",
     tags: [
