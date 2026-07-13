@@ -2,8 +2,7 @@ import { profile } from "../data/portfolio";
 import {
   FacebookIcon,
   LinkedInIcon,
-  MailIcon,
-  PhoneIcon,
+  MailIcon
 } from "./Icons";
 import { SectionHeader } from "./SectionHeader";
 
