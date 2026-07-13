@@ -28,12 +28,6 @@ export function Contact() {
       Icon: MailIcon,
     },
     {
-      label: "Phone",
-      value: profile.phone,
-      href: `tel:${profile.phone.replace(/\s/g, "")}`,
-      Icon: PhoneIcon,
-    },
-    {
       label: "LinkedIn",
       value: stripUrl(profile.linkedin),
       href: profile.linkedin,
